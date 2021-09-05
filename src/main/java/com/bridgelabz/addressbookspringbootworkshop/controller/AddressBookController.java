@@ -28,8 +28,9 @@ public class AddressBookController {
     {
         List<AddressBookData> addressList = addressBookService.getPersonsAddressData();
         ResponseDTO responseDTO =  new ResponseDTO("Get Call Success : ", addressList);
-        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
+
     /**
      * Api to get single contact with their Id
      * @param contactId
@@ -59,13 +60,13 @@ public class AddressBookController {
      * @return success message after updating details
      */
     @PutMapping("/update/{contactId}")
-    public ResponseEntity<ResponseDTO> updatePersonsAddress(@PathVariable("contact") int contactId,
+    public ResponseEntity<ResponseDTO> updatePersonsAddress(@PathVariable("contactId") int contactId,
                                                             @RequestBody AddressBookDTO addressBookDTO)
     {
         AddressBookData addressBookData = addressBookService.updatePersonsAddressData(contactId, addressBookDTO);
         ResponseDTO responseDTO =  new ResponseDTO("AddressBook Data Updated Successfully: ",
                 addressBookData);
-        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
     /**

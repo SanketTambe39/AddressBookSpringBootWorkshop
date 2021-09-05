@@ -2,10 +2,12 @@ package com.bridgelabz.addressbookspringbootworkshop.model;
 
 import com.bridgelabz.addressbookspringbootworkshop.dto.AddressBookDTO;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class AddressBookData {
     private int personId;
     private String fullName;
