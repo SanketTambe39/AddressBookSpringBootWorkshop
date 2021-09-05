@@ -1,13 +1,18 @@
 package com.bridgelabz.addressbookspringbootworkshop;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
+@Slf4j
 public class AddressBookSpringBootWorkshopApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AddressBookSpringBootWorkshopApplication.class, args);
+		ApplicationContext context =SpringApplication.run(AddressBookSpringBootWorkshopApplication.class, args);
+		log.info("AddressBook App Started in {} Environment", context.getEnvironment().getProperty("environment"));
+
 	}
 
 }
