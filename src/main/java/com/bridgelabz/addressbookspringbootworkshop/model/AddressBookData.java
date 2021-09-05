@@ -14,7 +14,7 @@ public class AddressBookData {
     private String address;
     private String city;
     private String state;
-    private long zipcode;
+    private String  zipcode;
     private String phoneNumber;
 
     public AddressBookData(int personId, AddressBookDTO addressBookDTO){
